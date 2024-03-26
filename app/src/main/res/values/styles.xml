@@ -3,4 +3,9 @@
     <style name="ActiveIndicator" >
         <item name="android:textColor">@color/purple_500</item>
     </style>
+    <style name="CustomDialogStyle" parent="Theme.MaterialComponents.Light.Dialog">
+        <!-- Customize dialog attributes as needed -->
+        <item name="android:windowMinWidthMajor">80%</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+    </style>
 </resources>

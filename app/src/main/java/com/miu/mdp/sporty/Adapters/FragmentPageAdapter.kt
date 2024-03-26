@@ -3,13 +3,24 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 
+
+interface DialogCallback {
+    fun onDataReturned(data: Any)
+}
+
+interface FragmentActions:DialogCallback {
+    fun openDialog()
+}
+// Define an abstract class that implements the interface
+abstract class BaseFragment : Fragment(), FragmentActions {
+}
 class FragmentPageAdapter(supportFragmentManager: FragmentManager) :
     FragmentStatePagerAdapter(supportFragmentManager) {
         // declare arrayList to contain fragments and its title
-        private val sportyFragmentList = ArrayList<Fragment>()
+        private val sportyFragmentList = ArrayList<BaseFragment>()
         private val sportyFragmentTitleList = ArrayList<String>()
 
-        override fun getItem(position: Int): Fragment {
+        override fun getItem(position: Int): BaseFragment {
             // return a particular fragment page
             return sportyFragmentList[position]
         }
@@ -24,7 +35,7 @@ class FragmentPageAdapter(supportFragmentManager: FragmentManager) :
             return sportyFragmentTitleList[position]
         }
 
-        fun addFragment(fragment: Fragment, title: String) {
+        fun addFragment(fragment: BaseFragment, title: String) {
             // add each fragment and its title to the array list
             sportyFragmentList.add(fragment)
             sportyFragmentTitleList.add(title)

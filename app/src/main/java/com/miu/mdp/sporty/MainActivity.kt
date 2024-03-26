@@ -11,15 +11,20 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.fragment.app.DialogFragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
+import com.miu.mdp.sporty.Adapters.BaseFragment
 import com.miu.mdp.sporty.Adapters.FragmentPageAdapter
 import com.miu.mdp.sporty.Pages.AboutMe.AboutMeFragment
 import com.miu.mdp.sporty.Pages.Athletes.AthletesFragment
 import com.miu.mdp.sporty.Pages.Events.EventsFragment
 import com.miu.mdp.sporty.Pages.HistoricalActivity.HistoricalSportsAchiveFragment
 import com.miu.mdp.sporty.Pages.News.NewsFragment
+import com.miu.mdp.sporty.Pages.Sports.Model.Sport
+import com.miu.mdp.sporty.Pages.Sports.SportDialogFragment
 import com.miu.mdp.sporty.Pages.Sports.SportsFragment
 import com.miu.mdp.sporty.ui.theme.SportyTheme
 
@@ -28,12 +33,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var pager: ViewPager
     private lateinit var tab: TabLayout
     private lateinit var bottomNav: BottomNavigationView
+    private lateinit var fab: FloatingActionButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
         pager = findViewById(R.id.viewPager)
         tab = findViewById(R.id.tabs)
+        fab = findViewById(R.id.fab_add)
 
+        // Initializing the ViewPagerAdapter
+        val adapter = FragmentPageAdapter(supportFragmentManager)
         bottomNav = findViewById(R.id.bottomNav)
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
@@ -55,10 +64,14 @@ class MainActivity : AppCompatActivity() {
                 else -> { true}
             }
         }
+        fab.setOnClickListener {
+            val selectedFragment = tab.selectedTabPosition
+            print("selected Fragmeent ")
+            print(selectedFragment)
+            adapter.getItem(selectedFragment).openDialog()
+        }
 
 
-        // Initializing the ViewPagerAdapter
-        val adapter = FragmentPageAdapter(supportFragmentManager)
 
         // add fragment to the list
         adapter.addFragment(SportsFragment(), "Sports")
@@ -80,4 +93,5 @@ class MainActivity : AppCompatActivity() {
         // bind the viewPager with the TabLayout.
         tab.setupWithViewPager(pager)
     }
+
 }

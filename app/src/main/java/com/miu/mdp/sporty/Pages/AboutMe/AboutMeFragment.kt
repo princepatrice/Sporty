@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.miu.mdp.sporty.Adapters.BaseFragment
 import com.miu.mdp.sporty.R
 
 /**
@@ -12,7 +13,15 @@ import com.miu.mdp.sporty.R
  * Use the [AboutMeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class AboutMeFragment : Fragment() {
+class AboutMeFragment : BaseFragment() {
+    override fun openDialog() {
+
+    }
+
+    override fun onDataReturned(data: Any) {
+
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="measure_options">
+        <item>Measure</item>
+        <item>Precision</item>
+        <item>Spectale</item>
+        <item>Combat</item>
+        <item>Play</item>
+    </string-array>
+</resources>

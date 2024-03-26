@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.miu.mdp.sporty.Adapters.BaseFragment
 import com.miu.mdp.sporty.R
 
 
@@ -13,7 +14,15 @@ import com.miu.mdp.sporty.R
  * Use the [EventsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class EventsFragment : Fragment() {
+class EventsFragment : BaseFragment() {
+    override fun openDialog() {
+
+    }
+
+    override fun onDataReturned(data: Any) {
+        TODO("Not yet implemented")
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
