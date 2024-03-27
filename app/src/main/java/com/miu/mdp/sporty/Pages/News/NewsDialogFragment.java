@@ -1,4 +1,4 @@
-package com.miu.mdp.sporty.Pages.Sports;
+package com.miu.mdp.sporty.Pages.News;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -14,13 +14,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.miu.mdp.sporty.Pages.Sports.Model.Sport;
+import com.miu.mdp.sporty.Pages.News.Model.News;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.miu.mdp.sporty.Adapters.DialogCallback;
 import com.miu.mdp.sporty.R;
 
-public class SportDialogFragment extends DialogFragment {
+public class NewsDialogFragment extends DialogFragment {
     public DialogCallback callback =null;
 
 
@@ -31,10 +31,10 @@ public class SportDialogFragment extends DialogFragment {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(requireContext(), R.style.CustomDialogStyle);
 
         // Set dialog title
-        builder.setTitle("Add New Sport");
+        builder.setTitle("Add New News");
 
         // Set the custom view for the dialog
-        View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.sport_dialog_fragment, null);
+        View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.news_dialog_fragment, null);
         builder.setView(dialogView);
 
         // Create the dialog
@@ -48,20 +48,20 @@ public class SportDialogFragment extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                Spinner spinnerMeasure = dialogView.findViewById(R.id.spinner_measure);
-                EditText editTextSportName = dialogView.findViewById(R.id.edit_text_sport_name);
-                EditText editTextDescription = dialogView.findViewById(R.id.edit_text_description);
-                String selectedMeasure = spinnerMeasure.getSelectedItem().toString();
-                String sportName = editTextSportName.getText().toString();
+                EditText editTextImageUrl = dialogView.findViewById(R.id.edit_text_news_image);
+                EditText editTextNewsName = dialogView.findViewById(R.id.edit_text_news_name);
+                EditText editTextDescription = dialogView.findViewById(R.id.edit_text_news_description);
+                String selectedMeasure = editTextImageUrl.getText().toString();
+                String newsName = editTextNewsName.getText().toString();
                 String description = editTextDescription.getText().toString();
 
-                if (sportName.isEmpty() || description.isEmpty() || selectedMeasure.isEmpty()) {
+                if (newsName.isEmpty() || description.isEmpty() || selectedMeasure.isEmpty()) {
                     // Display a Toast message indicating all fields must be filled
 
                     Toast.makeText(requireContext(), "All fields must be filled", Toast.LENGTH_SHORT).show();
                 } else {
                     // Process the data (e.g., pass it to your ViewModel)
-                     callback.onDataReturned(new Sport(selectedMeasure,sportName, description));
+                    callback.onDataReturned(new News(selectedMeasure,newsName, description));
                     dialog.dismiss(); // Dismiss the dialog
                 }
             }

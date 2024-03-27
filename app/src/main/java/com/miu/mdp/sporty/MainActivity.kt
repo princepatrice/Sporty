@@ -16,15 +16,13 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
+import com.miu.mdp.newsy.Pages.News.NewsFragment
 import com.miu.mdp.sporty.Adapters.BaseFragment
 import com.miu.mdp.sporty.Adapters.FragmentPageAdapter
 import com.miu.mdp.sporty.Pages.AboutMe.AboutMeFragment
 import com.miu.mdp.sporty.Pages.Athletes.AthletesFragment
 import com.miu.mdp.sporty.Pages.Events.EventsFragment
 import com.miu.mdp.sporty.Pages.HistoricalActivity.HistoricalSportsAchiveFragment
-import com.miu.mdp.sporty.Pages.News.NewsFragment
-import com.miu.mdp.sporty.Pages.Sports.Model.Sport
-import com.miu.mdp.sporty.Pages.Sports.SportDialogFragment
 import com.miu.mdp.sporty.Pages.Sports.SportsFragment
 import com.miu.mdp.sporty.ui.theme.SportyTheme
 
@@ -92,6 +90,7 @@ class MainActivity : AppCompatActivity() {
 
         // bind the viewPager with the TabLayout.
         tab.setupWithViewPager(pager)
+        //tab.selectTab(tab.getTabAt(1))
     }
 
 }
