@@ -1,25 +1,18 @@
 package com.miu.mdp.eventy.Pages.Events
+
+
 import android.content.Context
-import com.miu.mdp.sporty.R
-
-
-
-
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.miu.mdp.sporty.Adapters.BaseFragment
-import com.miu.mdp.sporty.Pages.Events.Model.Event
 import com.miu.mdp.sporty.Pages.Events.EventDialogFragment
-import com.squareup.picasso.Picasso
+import com.miu.mdp.sporty.Pages.Events.Model.Event
+import com.miu.mdp.sporty.R
 
 class EventFragment: BaseFragment() {
 
@@ -59,36 +52,42 @@ class EventFragment: BaseFragment() {
 
     private fun createSampleData(): MutableList<Event> {
         val events = mutableListOf<Event>()
-       events.add(
-            Event(
-                name = "Birthday Party",
-                description = "Celebrate John's birthday with friends and family.",
-                date = "2024-04-10"
-            ))
         events.add(
             Event(
-                name = "Conference",
-                description = "Attend the annual tech conference.",
-                date = "2024-05-15"
-            ))
+                "Birthday Party",
+                "Celebrate John's birthday with friends and family.",
+                "Mar, 5 2024"
+            )
+        )
         events.add(
             Event(
-                name = "Meeting with Client",
-                description = "Discuss project requirements with the client.",
-                date = "2024-04-20"
-            ))
+                "Conference",
+                "Attend the annual tech conference.",
+                "Apr, 10 2024"
+            )
+        )
         events.add(
             Event(
-                name = "Team Building Activity",
-                description = "Engage in team-building exercises.",
-                date = "2024-04-30"
-            ))
+                "Meeting with Client",
+                "Discuss project requirements with the client.",
+                "Apr, 15 2024"
+            )
+        )
         events.add(
             Event(
-                name = "Product Launch",
-                description = "Launch the new product line.",
-                date = "2024-06-01"
-            ))
+                "Team Building Activity",
+                "Engage in team-building exercises.",
+                "Apr, 20 2024"
+            )
+        )
+        events.add(
+            Event(
+                "Product Launch",
+                "Launch the new product line.",
+                "May, 1 2024"
+            )
+        )
+
         return events
         }
 

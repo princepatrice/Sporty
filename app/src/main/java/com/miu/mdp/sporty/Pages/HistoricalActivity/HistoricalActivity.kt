@@ -13,9 +13,7 @@ import com.miu.mdp.sporty.Adapters.BaseFragment
 import com.miu.mdp.sporty.Pages.HistoricalActivity.HistoricalActivityDialogFragment
 import com.miu.mdp.sporty.Pages.HistoricalActivitys.Model.HistoricalActivity
 import com.miu.mdp.sporty.R
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
+
 
 class HistoricalActivityFragment: BaseFragment() {
 
@@ -55,36 +53,49 @@ class HistoricalActivityFragment: BaseFragment() {
 
     private fun createSampleData(): MutableList<HistoricalActivity> {
         val historicalActivitys = mutableListOf<HistoricalActivity>()
-       historicalActivitys.add(
-            HistoricalActivity(
-                name = "Birthday Party",
-                description = "Celebrate John's birthday with friends and family.",
-                date = "2024-04-10"
-            ))
         historicalActivitys.add(
             HistoricalActivity(
-                name = "Conference",
-                description = "Attend the annual tech conference.",
-                date = "2024-05-15"
-            ))
+                "Product Launch",
+                "Launch the new product line.",
+                "Mar, 5 2024"
+            )
+        )
         historicalActivitys.add(
             HistoricalActivity(
-                name = "Meeting with Client",
-                description = "Discuss project requirements with the client.",
-                date = "2024-04-20"
-            ))
+                "Team Building Workshop",
+                "Participate in team-building exercises.",
+                "Apr, 10 2024"
+            )
+        )
         historicalActivitys.add(
             HistoricalActivity(
-                name = "Team Building Activity",
-                description = "Engage in team-building exercises.",
-                date = "2024-04-30"
-            ))
+                "Meeting with Investors",
+                "Discuss investment opportunities.",
+                "Apr, 15 2024"
+            )
+        )
         historicalActivitys.add(
             HistoricalActivity(
-                name = "Product Launch",
-                description = "Launch the new product line.",
-                date = "2024-06-01"
-            ))
+                "Client Presentation",
+                "Present project updates to the client.",
+                "Apr, 20 2024"
+            )
+        )
+        historicalActivitys.add(
+            HistoricalActivity(
+                "Seminar on AI",
+                "Attend the seminar on artificial intelligence.",
+                "May, 1 2024"
+            )
+        )
+        historicalActivitys.add(
+            HistoricalActivity(
+                "Birthday Celebration",
+                "Celebrate Anna's birthday with colleagues.",
+                "May, 15 2024"
+            )
+        )
+
         return historicalActivitys
         }
 
@@ -111,10 +122,8 @@ class HistoricalActivityFragment: BaseFragment() {
             private val historicalActivityDateTextView: TextView = itemView.findViewById(R.id.text_historical_activity_date)
         
             fun bind(rubrique: HistoricalActivity) {
-                val formatter = SimpleDateFormat("MMMM, dd yyyy", Locale.getDefault())
-                val formattedDate: String = formatter.format(Date(rubrique.date))
                 historicalActivityNameTextView.text = rubrique.name
-                historicalActivityDateTextView.text = formattedDate
+                historicalActivityDateTextView.text = rubrique.date
                 historicalActivityDescrptionTextView.text = rubrique.description
             }
         }

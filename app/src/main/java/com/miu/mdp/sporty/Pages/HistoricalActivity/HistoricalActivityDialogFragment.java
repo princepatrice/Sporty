@@ -42,7 +42,7 @@ public class HistoricalActivityDialogFragment extends DialogFragment {
         builder.setView(dialogView);
 
         EditText editTextHistoricalActivityDate = dialogView.findViewById(R.id.edit_text_historical_activity_date);
-        String historicalActivityDate = "";
+
 
         MaterialDatePicker.Builder<Long> CalendatBuilder = MaterialDatePicker.Builder.datePicker();
         final MaterialDatePicker<Long> picker = CalendatBuilder.build();
