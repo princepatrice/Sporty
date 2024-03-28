@@ -31,6 +31,7 @@ class SportsFragment: BaseFragment() {
 
     override fun onDataReturned(data: Any) {
         sportList.add(data as Sport)
+        rubriqueAdapter.notifyDataSetChanged()
     }
 
 

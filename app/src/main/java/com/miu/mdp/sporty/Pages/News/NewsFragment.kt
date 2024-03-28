@@ -35,6 +35,7 @@ class NewsFragment: BaseFragment() {
 
     override fun onDataReturned(data: Any) {
         newsList.add(data as News)
+        rubriqueAdapter.notifyDataSetChanged()
     }
 
 

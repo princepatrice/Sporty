@@ -16,11 +16,11 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
+import com.miu.mdp.athletey.Pages.Athletes.AthleteFragment
 import com.miu.mdp.newsy.Pages.News.NewsFragment
 import com.miu.mdp.sporty.Adapters.BaseFragment
 import com.miu.mdp.sporty.Adapters.FragmentPageAdapter
 import com.miu.mdp.sporty.Pages.AboutMe.AboutMeFragment
-import com.miu.mdp.sporty.Pages.Athletes.AthletesFragment
 import com.miu.mdp.sporty.Pages.Events.EventsFragment
 import com.miu.mdp.sporty.Pages.HistoricalActivity.HistoricalSportsAchiveFragment
 import com.miu.mdp.sporty.Pages.Sports.SportsFragment
@@ -74,14 +74,14 @@ class MainActivity : AppCompatActivity() {
         // add fragment to the list
         adapter.addFragment(SportsFragment(), "Sports")
         adapter.addFragment(NewsFragment(), "News")
-        adapter.addFragment(AthletesFragment(), "Athletes")
+        adapter.addFragment(AthleteFragment(), "Athletes")
         adapter.addFragment(EventsFragment(), "Events")
         adapter.addFragment(HistoricalSportsAchiveFragment(), "Historical Archives")
         adapter.addFragment(AboutMeFragment(), "About Me")
 
 //        0 - SportsFragment
 //        1 - NewsFragment
-//        2 - AthletesFragment
+//        2 - AthleteFragment
 //        3 - EventsFragment
 //        4 - HistoricalSportsAchiveFragment
 //        5 - AboutMeFragment

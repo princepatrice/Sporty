@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    >
+
+    <EditText
+        android:id="@+id/edit_text_athlete_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Athelete Name" />
+
+     <EditText
+        android:id="@+id/edit_text_athlete_sport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Athelete Sport" />
+    
+        <EditText
+        android:id="@+id/edit_text_athlete_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Athelete Country" />
+
+     <EditText
+        android:id="@+id/edit_text_athlete_performance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Athelete Best Performance" />
+
+        <EditText
+        android:id="@+id/edit_text_athlete_medal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Athelete Medals" />
+
+  
+    <EditText
+        android:id="@+id/edit_text_athlete_facts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Athlete Facts"
+        android:layout_marginTop="5dp"
+        android:lines="12"
+        android:minLines="3"
+        android:gravity="center"
+        android:scrollbars="vertical" />
+
+
+</LinearLayout>
