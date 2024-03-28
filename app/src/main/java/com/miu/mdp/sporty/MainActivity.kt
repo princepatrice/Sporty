@@ -1,30 +1,18 @@
 package com.miu.mdp.sporty
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.fragment.app.DialogFragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.miu.mdp.athletey.Pages.Athletes.AthleteFragment
+import com.miu.mdp.eventy.Pages.Events.EventFragment
+import com.miu.mdp.historicalActivityy.Pages.HistoricalActivity.HistoricalActivityFragment
 import com.miu.mdp.newsy.Pages.News.NewsFragment
-import com.miu.mdp.sporty.Adapters.BaseFragment
 import com.miu.mdp.sporty.Adapters.FragmentPageAdapter
 import com.miu.mdp.sporty.Pages.AboutMe.AboutMeFragment
-import com.miu.mdp.sporty.Pages.Events.EventsFragment
-import com.miu.mdp.sporty.Pages.HistoricalActivity.HistoricalSportsAchiveFragment
 import com.miu.mdp.sporty.Pages.Sports.SportsFragment
-import com.miu.mdp.sporty.ui.theme.SportyTheme
 
 class MainActivity : AppCompatActivity() {
 
@@ -75,14 +63,14 @@ class MainActivity : AppCompatActivity() {
         adapter.addFragment(SportsFragment(), "Sports")
         adapter.addFragment(NewsFragment(), "News")
         adapter.addFragment(AthleteFragment(), "Athletes")
-        adapter.addFragment(EventsFragment(), "Events")
-        adapter.addFragment(HistoricalSportsAchiveFragment(), "Historical Archives")
+        adapter.addFragment(EventFragment(), "Events")
+        adapter.addFragment(HistoricalActivityFragment(), "Historical Archives")
         adapter.addFragment(AboutMeFragment(), "About Me")
 
 //        0 - SportsFragment
 //        1 - NewsFragment
 //        2 - AthleteFragment
-//        3 - EventsFragment
+//        3 - EventFrgment
 //        4 - HistoricalSportsAchiveFragment
 //        5 - AboutMeFragment
         // Adding the Adapter to the ViewPager

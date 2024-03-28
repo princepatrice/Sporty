@@ -175,12 +175,12 @@ class AthleteFragment: BaseFragment() {
             private val athleteFactsTextView: TextView = itemView.findViewById(R.id.text_athlete_facts)
 
             fun bind(rubrique: Athlete) {
-                athleteNameTextView.text = rubrique.name
-                athleteCountryTextView.text = rubrique.country
-                athleteSportTextView.text = rubrique.sport
-                athletePerformanceTextView.text = rubrique.performance
-                athleteMedalsNameView.text = rubrique.medal
-                athleteFactsTextView.text = rubrique.facts
+                athleteNameTextView.text = "Name: " +rubrique.name
+                athleteCountryTextView.text = "Country: " + rubrique.country
+                athleteSportTextView.text = "Sport: " + rubrique.sport
+                athletePerformanceTextView.text = "Best Performance: " + rubrique.performance
+                athleteMedalsNameView.text = "Medals: " +rubrique.medal
+                athleteFactsTextView.text = "Facts: " +rubrique.facts
 
             }
         }
