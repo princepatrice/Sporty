@@ -1,6 +1,7 @@
 package com.miu.mdp.sporty
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tab: TabLayout
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var fab: FloatingActionButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
@@ -75,10 +77,20 @@ class MainActivity : AppCompatActivity() {
 //        5 - AboutMeFragment
         // Adding the Adapter to the ViewPager
         pager.adapter = adapter
-
         // bind the viewPager with the TabLayout.
         tab.setupWithViewPager(pager)
-        //tab.selectTab(tab.getTabAt(1))
+        tab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(currenttab: TabLayout.Tab?) {
+                if (currenttab?.position == 5) { // Replace YOUR_SPECIFIC_TAB_POSITION with the position of the tab where you want to hide the button
+                    fab.visibility = View.GONE // Set the button to be not visible
+                } else {
+                    fab.visibility = View.VISIBLE // Set the button to be visible for other tabs
+                }
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+        })
+
     }
 
 }
